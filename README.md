@@ -325,6 +325,7 @@ href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css" />
 **Ссылки на источники:**
 
 https://api.2gis.ru/doc/maps/ru/quickstart/ - документация API 2GIS
+
 http://flexboxgrid.com/ - документация FlexBox Grid
 
  
