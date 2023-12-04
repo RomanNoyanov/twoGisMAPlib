@@ -4,8 +4,11 @@
 Карта написана с использованием технологий HTML, CSS и JavaScript, что позволяет ей работать в любом современном браузере.
 
 •	Основной HTML файл (map.html)
+
 •	СSS файл (style.css)
+
 •	JavaScript файл (bibaddress.js)
+
 •	Необходимое количество HTML файлов для Iframe (cgdbf.html; cgdbf1.html; cgdbf2.html; cgdbf3.html; cgdbf4.html; defaut.html)
  
 **Страница с картой**
