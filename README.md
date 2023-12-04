@@ -51,6 +51,7 @@ DG.then(function () {
 •	**minZoom:10** – ограничение масштаба карты при взаимодействие с картой пользователем
 
 **Метки и Popup**
+
 Пример отображения маркера и работы PopUp
 
  ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/b1027d55-a92c-4adc-bbad-846f36df8663)
@@ -119,6 +120,7 @@ marker1.on("click", function (e) {
 
 
 **Выпадающее меню**
+
 Пример отображения выпадающего меню
 
  ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/dae0719a-fb8d-403d-8dd2-bcb80fe3b76c)
