@@ -16,13 +16,15 @@
 1.Подключение API 2GIS
 Для добавления карты на страницу необходимо: 
 подключение API  в HTML файле
-```<head>
+```
+<head>
        <script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
-  </head>
+</head>
 ```
 
 •	добавление в <body> блока  <div> c id=”map”
-``` <div id="map"></div>
+ ```
+<div id="map"></div>
 ```
 
 
@@ -284,11 +286,15 @@ href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css" />
 ```
  ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/20429f4d-a2f6-420e-b80f-597c5f12c4ef)
 
+
 Пример работы сайта на экране размера lg
+
 
 ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/16684801-1482-400d-ae50-ef651538777f)
 
+
 Пример работы сайта на экране размером sm
+
 
 
 
