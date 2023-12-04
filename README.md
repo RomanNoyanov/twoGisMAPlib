@@ -46,6 +46,7 @@
 
 **Метки и Popup**
  ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/b1027d55-a92c-4adc-bbad-846f36df8663)
+
 Пример отображения маркера и работы PopUp
 
 3.Инициализация группы маркеров.
@@ -54,14 +55,14 @@
     var group;
 
 Инициализация иконки:
- var myIcon = DG.icon({  // инициализация иконки 
+``` var myIcon = DG.icon({  // инициализация иконки 
         iconUrl: "img/logo.png", // ссылка на файл с иконкой 
         iconSize: [48, 48], // размер иконки 
-    });
+    });```
 
 После создания карты можно отобразить на ней маркер, добавив строки:
-var marker1 = DG.marker([59.93353, 30.3107],  
-{icon: myIcon}).addTo(markers).bindPopup('СПб ГБУК "Центральная городская детская библиотека им. А.С. Пушкина"');
+```var marker1 = DG.marker([59.93353, 30.3107],  
+{icon: myIcon}).addTo(markers).bindPopup('СПб ГБУК "Центральная городская детская библиотека им. А.С. Пушкина"');```
 
 
 Опишем каждую строку:
@@ -274,13 +275,17 @@ href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css" />
         </div>
 ```
  ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/20429f4d-a2f6-420e-b80f-597c5f12c4ef)
+
 Пример работы сайта на экране размера lg
 
 ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/16684801-1482-400d-ae50-ef651538777f)
+
 Пример работы сайта на экране размером sm
 
 
+
 **Ссылки на источники:**
+
 https://api.2gis.ru/doc/maps/ru/quickstart/ - документация API 2GIS
 http://flexboxgrid.com/ - документация FlexBox Grid
 
