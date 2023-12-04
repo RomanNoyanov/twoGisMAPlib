@@ -30,7 +30,8 @@
 
 2.Переходим в JavaScript 
 Воспользуемся функцией DG.then, в которую поместим код инициализации карты:
-```DG.then(function () {
+```
+DG.then(function () {
     var map = DG.map("map", {
         center: [59.934, 30.311],
         fullscreenControl: false,
@@ -50,25 +51,30 @@
 •	**minZoom:10** – ограничение масштаба карты при взаимодействие с картой пользователем
 
 **Метки и Popup**
- ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/b1027d55-a92c-4adc-bbad-846f36df8663)
-
 Пример отображения маркера и работы PopUp
 
+ ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/b1027d55-a92c-4adc-bbad-846f36df8663)
+
+
+
 3.Инициализация группы маркеров.
-```// Группы маркеров
+```
+// Группы маркеров
     var markers = DG.featureGroup();
     var group;
 ```
 
 Инициализация иконки:
-``` var myIcon = DG.icon({  // инициализация иконки 
+```
+var myIcon = DG.icon({  // инициализация иконки 
         iconUrl: "img/logo.png", // ссылка на файл с иконкой 
         iconSize: [48, 48], // размер иконки 
     });
 ```
 
 После создания карты можно отобразить на ней маркер, добавив строки:
-```var marker1 = DG.marker([59.93353, 30.3107],  
+```
+var marker1 = DG.marker([59.93353, 30.3107],  
 {icon: myIcon}).addTo(markers).bindPopup('СПб ГБУК "Центральная городская детская библиотека им. А.С. Пушкина"');
 ```
 
@@ -81,7 +87,8 @@
 
 
 Добавление созданных маркеров в группу  и централизация маркера при нажатии на него 
-```group = DG.featureGroup([marker1, marker2, marker3, marker4, marker5]);
+```
+group = DG.featureGroup([marker1, marker2, marker3, marker4, marker5]);
     group.addTo(map);
     group.on("click", function (e) {
         map.setView([e.latlng.lat, e.latlng.lng]);
@@ -92,7 +99,8 @@
 
 Взаимодействие с iframe
 HTML код
-```<div id="infobox">
+```
+<div id="infobox">
                 <iframe id="info" name="info" scrolling="no" frameborder="no" src="default.html" hspase="5">
 
                 </iframe>
@@ -101,7 +109,8 @@ HTML код
 
 При нажатии на маркер происходит смена страницы в ifram.
 В JavaScript прописываем данную функцию и необходимое количество аналогичных функций с измененной ссылкой на html файл   
- ```marker1.on("click", function (e) {
+ ```
+marker1.on("click", function (e) {
         infobox.style.visibility = "visible";
         infoframe.src = "cgdb.html"; // ссылка на html файл 
     });
@@ -110,12 +119,16 @@ HTML код
 
 
 **Выпадающее меню**
-
- ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/dae0719a-fb8d-403d-8dd2-bcb80fe3b76c)
 Пример отображения выпадающего меню
 
+ ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/dae0719a-fb8d-403d-8dd2-bcb80fe3b76c)
+
+
+
+
 В HTML коде создаем маркированный список с кнопками.
-```<div class='ad-menu'>
+```
+<div class='ad-menu'>
     <nav>
         <ul class="topmenu">
             <li>
@@ -178,7 +191,8 @@ HTML код
 
 
 В JavaScrip инициализируем кнопки из созданного списка.
-``` document.getElementById("hide_All").onclick = hideAllMarkers; 
+```
+document.getElementById("hide_All").onclick = hideAllMarkers; 
 //спрятать все геометки
     document.getElementById("show_All").onclick = showAllMarkers; 
 //показать все геометки
@@ -210,7 +224,8 @@ HTML код
 
 Приведен пример нескольких функций для меню, все остальные функции пишутся по аналогии.
 Функция которая показывает только два маркера.
-``` function show_two_markers() {
+```
+function show_two_markers() {
         markers.addTo(map); // добавляем все маркеры на карты 
         markers.removeFrom(map); // удаляем все мркеры с карты 
         marker1.addTo(map); // добавляем маркер marker1 на карту 
@@ -219,11 +234,12 @@ HTML код
         map.fitBounds(marker2.getBounds());
         group = DG.featureGroup([marker1, marker2]);
         group.addTo(map);
-        ```
+```
 
 
 Функция которая выводит popup, показывает один маркер на карте и изменяет iframe 
-```function marker1_show() {
+```
+function marker1_show() {
         DG.then(function () {
             DG.popup({
                 maxWidth: 350,
@@ -264,13 +280,15 @@ o	  map.setView([59.93353, 30.3107]); - централизация PopUp на с
 
 **Адаптивная верстка**
 Для адаптации сайт к любому разрешению экрана, подключили Flexbox Grid.
-```<head>
+```
+<head>
  <link rel="stylesheet" 
 href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css" />
 </head>
 ```
 Адаптивные модификаторы позволяют указывать различные размеры столбцов, смещения, выравнивание и распределение при ширине окна просмотра xs, sm, md и lg.
- ```<div class="cards">
+ ```
+<div class="cards">
 
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-8">
             <div id="map"></div>
@@ -284,16 +302,20 @@ href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css" />
             </div>
         </div>
 ```
+Пример работы сайта на экране размера lg
+
  ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/20429f4d-a2f6-420e-b80f-597c5f12c4ef)
 
 
-Пример работы сайта на экране размера lg
 
+
+
+Пример работы сайта на экране размером sm
 
 ![image](https://github.com/RomanNoyanov/twoGisMAPlib/assets/67968329/16684801-1482-400d-ae50-ef651538777f)
 
 
-Пример работы сайта на экране размером sm
+
 
 
 
