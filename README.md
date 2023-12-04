@@ -18,10 +18,12 @@
 подключение API  в HTML файле
 ```<head>
        <script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
-  </head>```
+  </head>
+```
 
 •	добавление в <body> блока  <div> c id=”map”
-``` <div id="map"></div>```
+``` <div id="map"></div>
+```
 
 
 2.Переходим в JavaScript 
@@ -35,7 +37,8 @@
             [61.25, 32.65],
         ],
         minZoom: 10,
-    });```
+    });
+```
 
 Опишем каждую строку:
 
@@ -50,19 +53,22 @@
 Пример отображения маркера и работы PopUp
 
 3.Инициализация группы маркеров.
- // Группы маркеров
+```// Группы маркеров
     var markers = DG.featureGroup();
     var group;
+```
 
 Инициализация иконки:
 ``` var myIcon = DG.icon({  // инициализация иконки 
         iconUrl: "img/logo.png", // ссылка на файл с иконкой 
         iconSize: [48, 48], // размер иконки 
-    });```
+    });
+```
 
 После создания карты можно отобразить на ней маркер, добавив строки:
 ```var marker1 = DG.marker([59.93353, 30.3107],  
-{icon: myIcon}).addTo(markers).bindPopup('СПб ГБУК "Центральная городская детская библиотека им. А.С. Пушкина"');```
+{icon: myIcon}).addTo(markers).bindPopup('СПб ГБУК "Центральная городская детская библиотека им. А.С. Пушкина"');
+```
 
 
 Опишем каждую строку:
@@ -77,7 +83,8 @@
     group.addTo(map);
     group.on("click", function (e) {
         map.setView([e.latlng.lat, e.latlng.lng]);
-    });```
+    });
+```
 
 
 
@@ -87,14 +94,16 @@ HTML код
                 <iframe id="info" name="info" scrolling="no" frameborder="no" src="default.html" hspase="5">
 
                 </iframe>
-            </div>```
+            </div>
+```
 
 При нажатии на маркер происходит смена страницы в ifram.
 В JavaScript прописываем данную функцию и необходимое количество аналогичных функций с измененной ссылкой на html файл   
  ```marker1.on("click", function (e) {
         infobox.style.visibility = "visible";
         infoframe.src = "cgdb.html"; // ссылка на html файл 
-    });```
+    });
+```
 
 
 
@@ -161,7 +170,8 @@ HTML код
         </ul>
     </nav>
     
-    </div>  ```
+    </div>
+```
 
 
 
@@ -193,7 +203,8 @@ HTML код
     document.getElementById("show_fourth_marker").onclick = show_fourth_marker; 
 //Показать 4 маркер в выпадающем меню
     document.getElementById("show_five_marker").onclick = show_five_marker; 
-//Показать 5 маркер в выпадающем меню```
+//Показать 5 маркер в выпадающем меню
+```
 
 Приведен пример нескольких функций для меню, все остальные функции пишутся по аналогии.
 Функция которая показывает только два маркера.
@@ -231,7 +242,8 @@ HTML код
         group = DG.featureGroup([marker1]);
         group.addTo(map);
         
-    }```
+    }
+```
 Опишем каждую строку:
 •	DG.then(function () – функция отображения PopUp
 o	 DG.popup({ - параметры PopUp
@@ -248,17 +260,13 @@ o	  map.setView([59.93353, 30.3107]); - централизация PopUp на с
 •	marker1.addTo(map); - добавление маркера на карту 
 
 
-
-
-
-
-
 **Адаптивная верстка**
 Для адаптации сайт к любому разрешению экрана, подключили Flexbox Grid.
 ```<head>
  <link rel="stylesheet" 
 href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css" />
-</head>```
+</head>
+```
 Адаптивные модификаторы позволяют указывать различные размеры столбцов, смещения, выравнивание и распределение при ширине окна просмотра xs, sm, md и lg.
  ```<div class="cards">
 
